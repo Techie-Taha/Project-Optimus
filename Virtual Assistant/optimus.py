@@ -31,7 +31,7 @@ def processCommand(c):
 if __name__ == "__main__":
     speak("Initializing Optimus.......")
     while True:
-        r = sr.Recognizer()
+        r = sr.Recognizer() 
         
         print("recognizing....")
         try:
