@@ -1,7 +1,7 @@
 import speech_recognition as sr
 import webbrowser
 import pyttsx3 # helps to convert text into speech
-
+import musicLibrary
 
 recognizer = sr.Recognizer()
 engine = pyttsx3.init()
@@ -15,17 +15,20 @@ def speak(text):
 
 
 def processCommand(c):
-    pass
-    #if "open google" in c.lower():
-        #webbrowser.open("https://google.com")
-    #elif "open facebook" in c.lower():
-        #webbrowser.open("https://facebook.com")
-    #elif "open instagram" in c.lower():
-        #webbrowser.open("https://instagram.com")
-    #elif "open github" in c.lower():
-        #webbrowser.open("https://github.com") 
-    #elif "open youtube" in c.lower():
-        #webbrowser.open("https://youtube.com")
+    if "open google" in c.lower():
+        webbrowser.open("https://google.com")
+    elif "open facebook" in c.lower():
+        webbrowser.open("https://facebook.com")
+    elif "open instagram" in c.lower():
+        webbrowser.open("https://instagram.com")
+    elif "open github" in c.lower():
+        webbrowser.open("https://github.com") 
+    elif "open youtube" in c.lower():
+        webbrowser.open("https://youtube.com")
+    elif c.lower().startswith('play'):
+        song = c.lower().split(" ")[1]
+        link = musicLibrary.music[song]
+        webbrowser.open(link)    
 
 
 if __name__ == "__main__":
